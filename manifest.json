@@ -1,0 +1,58 @@
+{
+  "id": "jueyuan_dggmod",
+  "name": "DG-Gmod",
+  "version": "1.1.0",
+  "sdk": "1",
+  "author": "绝缘",
+  "description": "Gmod x DG-LAB",
+  "entry": "main.py",
+  "capabilities": {
+    "startup_check": true
+  },
+  "config_schema": [
+    {
+      "section": "基础设置",
+      "fields": [
+        { "key": "damage_penalty", "type": "bool", "label": "检测伤害", "default": true },
+        { "key": "damage_cap", "type": "number", "label": "游戏伤害上限", "default": 99999 },
+        { "key": "damage_multiplier", "type": "number", "label": "伤害倍率", "default": 1, "description": "游戏中的伤害值 x 伤害倍率" },
+        { "key": "damage_increment", "type": "number", "label": "伤害增量", "default": 0 },
+        { "key": "damage_duration", "type": "number", "label": "持续时间", "default": 0.5 },
+        { "key": "damage_stacking", "type": "bool", "label": "伤害叠加", "default": false },
+        { "key": "damage_stacking_cap", "type": "number", "label": "伤害叠加上限%", "default": 50 },
+        { "key": "damage_stack_time", "type": "number", "label": "叠加清零时间", "default": 2 },
+        { "key": "channel_damage", "type": "channel", "label": "输出通道", "default": "both" }
+      ]
+    },
+    {
+      "section": "伤害类型设置",
+      "fields": [
+        { "key": "damage_any", "type": "bool", "label": "检测其他伤害", "default": true },
+        { "key": "damage_any_preset", "type": "preset", "label": "波形预设", "default": "CS-受伤" },
+        { "key": "damage_burn", "type": "bool", "label": "检测燃烧伤害", "default": true },
+        { "key": "damage_burn_preset", "type": "preset", "label": "波形预设", "default": "CS-燃烧" },
+        { "key": "damage_blast", "type": "bool", "label": "检测爆炸伤害", "default": true },
+        { "key": "damage_blast_preset", "type": "preset", "label": "波形预设", "default": "CS-受伤" }
+      ]
+    },
+    {
+      "section": "玩家死亡设置",
+      "fields": [
+        { "key": "death_penalty", "type": "bool", "label": "检测死亡", "default": false },
+        { "key": "death_penalty_pct", "type": "percent", "label": "电击量%", "default": 0 },
+        { "key": "death_penalty_duration", "type": "number", "label": "电击时间", "default": 0 },
+        { "key": "channel_death", "type": "channel", "label": "输出通道", "default": "both" },
+        { "key": "death_preset", "type": "preset", "label": "波形预设", "default": "CS-死亡" }
+      ]
+    },
+    {
+      "section": "多人模式设置",
+      "fields": [
+        { "key": "chat", "type": "text", "label": "仅服主生效", "default": "仅服主生效" },
+        { "key": "multi_player", "type": "bool", "label": "多人模式", "default": false },
+        { "key": "steamid64", "type": "text", "label": "你的64位SteamID", "default": "" }
+      ]
+    }
+
+  ]
+}
